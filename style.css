@@ -1,0 +1,297 @@
+/* --- RESET Y CONFIGURACIÓN CINEMATOGRÁFICA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #08121e;
+    color: #f4f6f8;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    letter-spacing: 0.5px;
+}
+
+/* --- CAPAS DE FONDO INTERACTIVAS --- */
+#bg-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+}
+
+#particles-container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); /* Capa oscura protectora de contraste */
+    backdrop-filter: blur(1px);
+    z-index: -1;
+}
+
+/* --- PARTÍCULAS INDIVIDUALES --- */
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(105vh) scale(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-5vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+#app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- ESCENAS --- */
+.scene {
+    position: absolute;
+    width: 90%;
+    max-width: 650px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scene.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* --- TIPOGRAFÍA Y CONTRASTE EN TEXTOS --- */
+.chapter {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 7px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    line-height: 1.1;
+    margin-bottom: 35px;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+p {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #f1f5f9;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.phrase {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.phrase.small {
+    font-size: 1.4rem;
+    color: #e2e8f0;
+    margin-top: 10px;
+}
+
+/* --- IMÁGENES ESTILO GALERÍA (.hero) --- */
+.hero {
+    width: 100%;
+    max-width: 420px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    display: block;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.scene:hover .hero {
+    transform: scale(1.02);
+}
+
+/* --- TARJETA DE CRISTINA (Efecto Cristal) --- */
+.letter {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 45px 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+.info {
+    margin-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+}
+
+.info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #f59e0b;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.info p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* --- BOTONES PREMIUM Y NAV --- */
+button {
+    margin-top: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 16px 48px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #ffffff;
+    color: #08121e;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
+
+.nav-btn-back {
+    position: fixed;
+    bottom: 25px;
+    left: 50px; /* Separado a la izquierda */
+    margin-top: 0;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    background: rgba(8, 18, 30, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.nav-btn-back:hover {
+    background: #ffffff;
+    color: #08121e;
+    transform: translateY(-2px);
+}
+
+/* --- INDICADOR FIJO ABAJO CON RETRASO DE 2 SEGUNDOS --- */
+.tap-hint {
+    position: fixed;
+    bottom: 550px; /* Lo deja en el borde inferior de la pantalla */
+    left: 50%;
+    transform: translateX(-50%); /* Lo centra perfectamente horizontal */
+    background: rgba(8, 18, 30, 0.75); /* Píldora oscura premium */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    pointer-events: none; /* No interfiere con los clics en la pantalla */
+    z-index: 9999; /* Por encima de todo */
+    
+    /* Estado inicial invisible y animación diferida */
+    opacity: 0;
+    animation: fadeInPulse 2.5s ease-in-out 2s infinite forwards;
+}
+
+@keyframes fadeInPulse {
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+/* --- ADAPTACIÓN PARA MÓVILES --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
+    p { font-size: 1rem; }
+    .phrase { font-size: 1.3rem; }
+    .phrase.small { font-size: 1.1rem; }
+    .hero { max-width: 95%; height: 220px; }
+    .letter { padding: 30px 20px; }
+    .nav-btn-back { bottom: 20px; left: 20px; padding: 8px 16px; }
+    .tap-hint { bottom: 25px; font-size: 0.75rem; }
+}

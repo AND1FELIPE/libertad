@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBERTAD</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <video autoplay loop muted playsinline id="bg-video">
+            <source src="assets/video/cielo.mp4" type="video/mp4">
+        </video>
+        <div id="particles-container"></div>
+        <div class="overlay"></div>
+    </div>
+
+    <main id="app">
+
+        <section class="scene active" id="intro">
+            <div class="content">
+                <p class="chapter">CAPÍTULO I</p>
+                <h1>LIBERTAD</h1>
+                <p class="phrase">
+                    Nunca he querido ser el motivo por el que alguien deje de volar.
+                </p>
+                <p class="phrase small">
+                    Pero sí una de las razones por las que sonría mientras lo hace.
+                </p>
+                <button id="startBtn">Comenzar</button>
+            </div>
+        </section>
+
+        <section class="scene" id="taparto">
+            <img src="assets/img/taparto.jpg" class="hero">
+            <div class="content">
+                <h2>Hay lugares que parecen guardar silencio...</h2>
+                <p>Hasta que llegan las personas correctas.</p>
+            </div>
+            <div class="tap-hint">Toca para continuar ↓</div>
+        </section>
+
+        <section class="scene" id="recuerdo">
+            <img src="assets/img/nosotros2.jpg" class="hero">
+            <div class="content">
+                <h2>Cuando pienso en ti...</h2>
+                <p>Siempre regreso al mismo lugar.</p>
+                <p>Esa noche donde dormimos abrazados.</p>
+                <p>O ese día donde reímos hasta llorar.</p>
+            </div>
+            <div class="tap-hint">Toca para continuar ↓</div>
+        </section>
+
+        <section class="scene" id="mirada">
+            <img src="assets/img/sonrisa.jpg" class="hero">
+            <div class="content">
+                <h2>Después entendí algo.</h2>
+                <p>No fue un momento perfecto.</p>
+                <p>Fueron muchos momentos pequeños.</p>
+                <p>Los que hicieron que comenzaras a importarme de verdad.</p>
+            </div>
+            <div class="tap-hint">Toca para continuar ↓</div>
+        </section>
+
+        <section class="scene" id="manos">
+            <img src="assets/img/manos.jpg" class="hero">
+            <div class="content">
+                <h2>Querer...</h2>
+                <p>Nunca ha significado detener.</p>
+                <p>Significa acompañar.</p>
+                <p>Admirar.</p>
+                <p>Celebrar que la otra persona pueda seguir volando.</p>
+            </div>
+            <div class="tap-hint">Toca para continuar ↓</div>
+        </section>
+
+        <section class="scene" id="cascada">
+            <img src="assets/img/cascada.jpg" class="hero">
+            <div class="content">
+                <h2>Y entonces pensé...</h2>
+                <p>Si alguna vez pudiera regalarte algo...</p>
+                <p>Quisiera regalarte una experiencia.</p>
+            </div>
+            <div class="tap-hint">Toca para continuar ↓</div>
+        </section>
+
+        <section class="scene" id="invitacion">
+            <div class="letter">
+                <h2>Mi cielo...</h2>
+                <p>Quiero invitarte a vivir una experiencia que, para mí, representa una forma muy bonita de querer.</p>
+                <p>No quiero detener tu vuelo.</p>
+                <p>Quiero tener la fortuna de contemplarlo.</p>
+                
+                <div class="info">
+                    <h3>17 de julio</h3>
+                    <p>10:00 a.m (a esa hora llego por ti)</p>
+                    <p>San Félix</p>
+                </div>
+                
+                <button id="finishBtn">¿Volamos?</button>
+            </div>
+        </section>
+
+        <button id="prevBtn" class="nav-btn-back" style="display: none;">← Atrás</button>
+
+    </main>
+
+    <audio id="bgMusic" src="assets/audio/musica.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

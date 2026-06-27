@@ -253,47 +253,6 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* --- INDICADOR FLOTANTE (PC) --- */
-.tap-hint {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(8, 18, 30, 0.75);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 24px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.85);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 500;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    animation: fadeInPulse 2.5s ease-in-out 2s infinite forwards;
-}
-
-/* --- SOLUCIÓN PARA CELULARES --- */
-@media (max-width: 768px) {
-    .tap-hint {
-        position: relative; /* Cambia a relativo para que respete el flujo del diseño */
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin: 15px auto 5px auto; /* Centrado perfecto entre la foto y el texto */
-        display: table; /* Ajusta la píldora al tamaño exacto del texto */
-        clear: both;
-    }
-}
-
-@keyframes fadeInPulse {
-    0% { opacity: 0; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0; }
-}
-
 /* --- ADAPTACIÓN PARA MÓVILES --- */
 @media (max-width: 768px) {
     h1 { font-size: 2.8rem; }

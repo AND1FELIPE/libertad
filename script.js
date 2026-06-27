@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Reemplazamos los emojis de texto por sus códigos de escape Unicode
         // \u{1F942} es el parapente y \u{2728} son los destellos
-        const textoLimpio = "¡Sí, quiero volar contigo! Nos vemos el 17 de julio \u{1F942}\u{2728}";
+        const textoLimpio = "¡Sí, quiero volar contigo! Nos vemos el 17 de julio \u{1FA82}\u{2728}";
         
         const mensajeParaTi = encodeURIComponent(textoLimpio);
         const urlWhatsapp = `https://wa.me/${tuTelefono}?text=${mensajeParaTi}`;
